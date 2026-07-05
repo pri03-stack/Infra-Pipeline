@@ -9,7 +9,8 @@ terraform {
   backend "s3" {
     bucket = "demo-terraformbucket-05"
     key    = "environments/dev/terraform.tfstate"
-    region = "ap-southeast-1"
+    region = "ap-south-1"
+    dynamodb_table = "terraform-locks"
   }
 }
 
