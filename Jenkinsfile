@@ -16,7 +16,8 @@ pipeline {
    stage('Terraform Init') {
       steps {
         dir("${TF_WORKDIR}") {
-          sh 'terraform init'
+          // ✅ Reconfigure backend after changes
+          sh 'terraform init -reconfigure'
         }
       }
     }
